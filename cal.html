@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by timvickie2003 (http://jsbin.com/favofo/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+<body>
+  <p>計算 卡路里 </p>
+身高 <input type="text" id="height1" /> 輸入你的身高 <br><br>
+體重 <input type="text" id="weight1" /> 輸入你的體重 <br><br>
+年鹷 <input type="text" id="age1" /> 輸入你的年鹷 <br><br>
+<input type="button" value="計算" onclick="BMI()"/>
+<script id="jsbin-javascript">
+function BMI(){
+  var height =
+  document.getElementById('height1').value/100;
+  var weight =
+  document.getElementById('weight1').value;
+   var age =
+  document.getElementById('age1').value;
+ var cal=25;
+ var type1="體重標準型";
+ var bmi1=Math.round(weight/(height*height)).toFixed(2);
+  alert(bmi1);
+  if (bmi1 > 24){
+    cal=35;
+    type1="體重過重型"
+  }else if (bmi1<18){
+    cal=20;
+    type1="體重過輕型"
+  }
+  
+  
+  alert("你屬於 "+type1+" 每日需消耗 "+Math.round(weight*bmi1).toFixed(0)+" 卡路里");
+ 
+ 
+}
+</script>
+</body>
+</html>
